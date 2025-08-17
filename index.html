@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>
+    confessions of a serial oversharer
+  </title>
+
+  <style>
+    :root{
+      --pink:#ff48b0;
+      --pink-dark:#d92f8f;
+      --pink-light:#ffc9e7;
+      --lav:#ff9bd6;
+      --bg:#ffd6ec;         /* use this for the page background */
+      --ink:#2a1030;
+      --white:#fff;
+      --link:#a11669;       /* ADDED so <a> colors work */
+      --link-hover:#070707; /* ADDED */
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ margin:0; }
+
+    body{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: var(--bg);
+      color: var(--pink-dark);
+      line-height:1.6;
+    }
+
+    /* HEADER */
+    header{
+      padding: 1rem 2rem;
+      border-bottom: 6px solid var(--pink-dark);   /* no space inside 6px */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .brand{ font-weight: 800; color: var(--pink-dark); }
+
+    nav{ display:flex; gap:1rem; flex-wrap:wrap; }
+    nav a{
+      color: var(--link);
+      text-decoration: none;             /* fixed */
+      font-weight: bold;
+    }
+    nav a:hover{ color: var(--link-hover); }
+
+    /* LAYOUT: sidebar + content */
+    .wrap{
+      width:min(1100px, 92%);
+      margin: 1.5rem auto 3rem;
+      display:grid;
+      grid-template-columns: 300px 1fr;  /* left sidebar, right content */
+      gap: 20px;
+    }
+      @media (max-width:900px){
+      .wrap{ grid-template-columns: 1fr; }
+    }
+
+    /* SIDEBAR BLOCKS */
+    .block{
+      border:3px solid #d92f8f;
+      border-radius:16px;
+      box-shadow:0 10px 24px rgba(217,48,143,.22);
+      padding:18px;
+      margin-bottom:18px;
+      color:#7b2b5d;
+    }
+    .block h3{ margin:0 0 10px; text-transform:uppercase; letter-spacing:.6px; }
+
+    .navlist a{
+      display:block;
+      padding:6px 0;
+      color:#a11669;
+      text-decoration:none;
+      font-weight:800;
+    }
+    .navlist a:hover{ text-decoration:underline; }
+
+    /* CONTENT CARDS */
+    .card{
+      border:3px solid #d92f8f;
+      border-radius:16px;
+      box-shadow:0 12px 30px rgba(217,48,143,.24);
+      padding:18px;
+      margin-bottom:18px;
+      color:#2a1030;
+    }
+    .card h2{ margin:0 0 8px; }
+
+    .btn{
+      display:inline-block;
+      background: linear-gradient(180deg, #ffe2f2, #ffa8da);
+      border:3px solid #d92f8f;;
+      border-radius:12px;
+      padding:8px 12px;
+      color:#7b2b5d;
+      font-weight:900;
+      text-decoration:none;
+    }
+
+    img {
+        height: 440px;
+        border:3px solid #d92f8f;
+        border-radius:16px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="brand logo">confessions of a serial oversharer</div>
+    <nav aria-label="Primary">
+      <a href="index.html">home</a>
+      <a href="blog.html">blog</a>
+      <a href="lessons.html">life lessons</a>
+      <a href="advice.html">advice</a>
+      <a href="fashion.html">my closet</a>
+      <a href="questions.html">Q&amp;A</a>
+    </nav>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="wrap">
+    <!-- LEFT SIDEBAR -->
+    <aside>
+      <div class="block">
+        <h3>about me</h3>
+        <p> welcome to my blog! you can call me em. i'm currently a student based in nyc. in my free time, i like to write, read, shop (like a lot) and hang out with my friends.</p>
+      </div>
+
+      <div class="block">
+        <h3>quick links</h3>
+        <nav class="navlist">
+          <a href="index.html">→ start here</a>
+          <a href="blog.html">→ latest posts</a>
+          <a href="advice.html">→ get advice</a>
+          <a href="readings.html">→ more</a>
+        </nav>
+      </div>
+
+      <div class="block">
+        <h3>currently</h3>
+        <p><b>wearing:</b> bunny pajamas<br>
+           <b>listening:</b> nasha by talwiinder <br>
+           <b>talking to:</b> finanical aid 🙄😖</p>
+      </div>
+
+      <div class="block">
+        <h3>contact me!</h3>
+        <b>email:</b> <p></p>
+        <b>instagram:</b> <p></p>
+      </div>
+    </aside>
+
+    <!-- RIGHT CONTENT -->
+    <main>
+          <div class="image-container">
+            <img src="https://www.dropbox.com/scl/fi/olyj07tgvmwchobfwj4bz/welcome-1.png?rlkey=vfqc0efke17veovbu874wx9pz&st=od07jzc8&raw=1" alt="welcome image" /> 
+        </div>
+
+      <div class="card">
+        <h2>welcome to my blog!</h2>
+        <p>this is where i rant, give advice, and just yap my heart out. this is an archive of my thoughts, the lessons i've learned, my goals, my happiest and worst days and essentially my entire life.</p>
+        <a class="btn" href="blog.html">read the blog →</a>
+      </div>
+
+      <div class="card">
+        <h2>latest post</h2>
+        <p></p>
+        <a class="btn" href="post-1.html">continue reading →</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
