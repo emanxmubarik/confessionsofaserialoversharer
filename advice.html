@@ -3,21 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>
-    confessions of a serial oversharer
-  </title>
+  <title>confessions of a serial oversharer — advice</title>
 
   <style>
-      :root{
+    :root{
       --pink:#ff48b0;
       --pink-dark:#d92f8f;
       --pink-light:#ffc9e7;
-      --lav:#ff9bd6;
-      --bg:#ffd6ec;         /* use this for the page background */
-      --ink:#2a1030;
+      --bg:#ffd6ec;
       --white:#fff;
-      --link:#a11669;       /* ADDED so <a> colors work */
-      --link-hover:#070707; /* ADDED */
+      --link:#d92f8f;
+      --link-hover:#ff48b0;
+      --shadow: rgba(217,48,143,.22);
     }
 
     *{ box-sizing:border-box; }
@@ -33,76 +30,103 @@
     /* HEADER */
     header{
       padding: 1rem 2rem;
-      border-bottom: 6px solid var(--pink-dark);   /* no space inside 6px */
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      border-bottom: 6px solid var(--pink-dark);
+      display:flex; justify-content:space-between; align-items:center;
+      background: var(--bg);
+      box-shadow: 0 2px 5px var(--shadow);
     }
-    .brand{ font-weight: 800; color: var(--white); }
+    .brand{ font-weight:800; color:var(--pink-dark); text-decoration:none; }
+    nav{ display:flex; gap:1rem; flex-wrap:wrap }
+    nav a{ color:var(--link); text-decoration:none; font-weight:bold }
+    nav a:hover{ color:var(--link-hover) }
 
-    nav{ display:flex; gap:1rem; flex-wrap:wrap; }
-    nav a{
-      color: var(--link);
-      text-decoration: none;             /* fixed */
-      font-weight: bold;
+    /* INNER PAGE */
+    .inner-page{
+      background: var(--pink-light);
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 22px 30px;
+      border: 4px solid var(--pink-dark);
+      border-radius: 8px;
+      box-shadow: 6px 6px 0 #736172;
     }
-    .brand{ font-weight: 800; color: var(--pink-dark); }
+    .inner-page h1, .inner-page h2, .inner-page h3{ margin-top:0; color:var(--pink-dark) }
 
-    .inner-page {
-        pink-light:#fdd1ea;          
-        max-width: 800px;              
-        margin: 40px auto;             
-        padding: 20px 30px;           
-        border: 4px solid #d92f8f;     
-        border-radius: 8px;           
-        box-shadow: 6px 6px 0 #736172; 
+    /* BUTTON */
+    .btn{
+      display:inline-block;
+      margin:16px 0;
+      background: var(--pink-light);
+      border:3px solid var(--pink-dark);
+      border-radius:12px;
+      padding:10px 16px;
+      color:var(--pink-dark);
+      font-weight:900;
+      text-decoration:none;
+      cursor:pointer;
+    }
+    .btn:hover{
+      background: var(--white);
+      color: var(--pink-dark);
     }
 
-
-    img {
-        height: 440px;
+    /* Q&A cards */
+    .qa{
+      background:#fff;
+      border:2px solid var(--pink-dark);
+      border-radius:8px;
+      padding:14px;
+      margin:14px 0;
+      color:var(--pink-dark);
     }
+    .qa h3{ margin:0 0 6px; }
+    .qa .meta{ font-size:13px; opacity:.9; margin-bottom:6px }
+
+    footer{
+      width:min(1100px,92%);
+      margin: 12px auto 28px;
+      text-align:center;
+      color:var(--pink-dark);
+    }
+
   </style>
 </head>
 
 <body>
   <!-- HEADER -->
-   <header>
-    <div class="brand logo">title</div>
+  <header>
+    <a href="index.html" class="brand">confessions of a serial oversharer</a>
     <nav aria-label="Primary">
       <a href="index.html">home</a>
       <a href="blog.html">blog</a>
       <a href="lessons.html">life lessons</a>
-      <a href="advice.html">advice</a>
+      <a href="advice.html" aria-current="page">advice</a>
       <a href="fashion.html">my closet</a>
       <a href="questions.html">Q&amp;A</a>
     </nav>
   </header>
 
-<main class="inner-page">
-    <h2>need some advice?</h2>
-    <p>if you need some advice, you're in the right place! send your queries at my email: and i'll post them here! the only rule is: do as i say, not as i do! scroll to get some advice from my wise brain!</p>
+  <!-- ADVICE PAGE -->
+  <main class="inner-page">
+    <h1>get advice</h1>
+    <p>have a question about school, fashion, life, or literally anything at all? click the link below to fill out the google form and i'll share my thoughts here</p>
 
-    </main>
+    <!-- Google Form Button -->
+    <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSc3cCxumldTszck85Ullj0wPtpAwrM0aB9S20UZ549DkIAObQ/viewform?usp=header" target="_blank">
+      ask a question
+    </a>
 
-    
-    <main class="inner-page">
-        <h3></h3>
-        <p></p>
-    </main>
+    <h2>recent advice</h2>
+    <article class="qa">
+      <h3></h3>
+      <div class="meta"></div>
+      <p></p>
+    </article>
 
-   <main class="inner-page">
-        <h3></h3>
-        <p></p>
-    </main>
-</main>
-
-
-
-</main>
-
+  </main>
+    <footer>
+    © <span id="y"></span> confessions of a serial oversharer — all words mine
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
 </html>
